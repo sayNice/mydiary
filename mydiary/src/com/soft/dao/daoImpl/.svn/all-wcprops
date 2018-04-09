@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/mydiaryitem/!svn/ver/81/trunk/mydiary/src/com/soft/dao/daoImpl
+END
+PhotoDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/mydiaryitem/!svn/ver/48/trunk/mydiary/src/com/soft/dao/daoImpl/PhotoDaoImpl.java
+END
+DiaryDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/mydiaryitem/!svn/ver/80/trunk/mydiary/src/com/soft/dao/daoImpl/DiaryDaoImpl.java
+END
+UserDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/mydiaryitem/!svn/ver/100/trunk/mydiary/src/com/soft/dao/daoImpl/UserDaoImpl.java
+END

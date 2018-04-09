@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mydiaryitem/!svn/ver/80/trunk/mydiary/config
+END
+jdbc.properties
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/mydiaryitem/!svn/ver/100/trunk/mydiary/config/jdbc.properties
+END
+springmvc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/mydiaryitem/!svn/ver/99/trunk/mydiary/config/springmvc.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/mydiaryitem/!svn/ver/3/trunk/mydiary/config/log4j.properties
+END

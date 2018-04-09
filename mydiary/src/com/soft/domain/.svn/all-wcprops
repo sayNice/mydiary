@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/mydiaryitem/!svn/ver/81/trunk/mydiary/src/com/soft/domain
+END
+Diary_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/mydiaryitem/!svn/ver/80/trunk/mydiary/src/com/soft/domain/Diary_SqlMap.xml
+END
+Photo_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/mydiaryitem/!svn/ver/48/trunk/mydiary/src/com/soft/domain/Photo_SqlMap.xml
+END
+Author.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/mydiaryitem/!svn/ver/3/trunk/mydiary/src/com/soft/domain/Author.java
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/mydiaryitem/!svn/ver/3/trunk/mydiary/src/com/soft/domain/User.java
+END
+Search.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/mydiaryitem/!svn/ver/3/trunk/mydiary/src/com/soft/domain/Search.java
+END
+BgImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/mydiaryitem/!svn/ver/59/trunk/mydiary/src/com/soft/domain/BgImage.java
+END
+User_SqlMap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/mydiaryitem/!svn/ver/100/trunk/mydiary/src/com/soft/domain/User_SqlMap.xml
+END
+Diary.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/mydiaryitem/!svn/ver/75/trunk/mydiary/src/com/soft/domain/Diary.java
+END
+Photo.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/mydiaryitem/!svn/ver/46/trunk/mydiary/src/com/soft/domain/Photo.java
+END

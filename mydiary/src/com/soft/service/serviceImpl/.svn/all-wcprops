@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/mydiaryitem/!svn/ver/84/trunk/mydiary/src/com/soft/service/serviceImpl
+END
+UserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/mydiaryitem/!svn/ver/100/trunk/mydiary/src/com/soft/service/serviceImpl/UserServiceImpl.java
+END
+PhotoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/mydiaryitem/!svn/ver/48/trunk/mydiary/src/com/soft/service/serviceImpl/PhotoServiceImpl.java
+END
+DiaryServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/mydiaryitem/!svn/ver/84/trunk/mydiary/src/com/soft/service/serviceImpl/DiaryServiceImpl.java
+END

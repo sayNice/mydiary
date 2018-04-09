@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="user">
+  
+  <typeAlias alias="USER" type="com.soft.domain.User"/>
+  <update id="updatePath">
+  	update realpath_table set realPath = #filePath# where id=1;
+  </update>
+  
+  <select id="getRealPath" resultClass="String">
+  select realPath from realpath_table where id = 1;
+  </select>
+ <select id="checkuser" parameterClass="USER" resultClass="USER">
+ 	select * from user_table where username=#username# and password=#password#
+ </select>
+ 
+<select id="getUserByUserName" parameterClass="USER" resultClass="USER">
+ 	select * from user_table where username=#username#
+ </select>
+  <insert id="insertuser" parameterClass="USER">
+  	insert into user_table (id,username,password,niceName) values(
+  	null,
+  	#username#,
+  	#password#,
+  	#niceName#
+  	);
+  </insert>
+  <update id="logins" parameterClass="USER">
+  	update user_table set logins=user_table.logins+1 where username=#username#;
+  </update>
+  <select id="getuser" parameterClass="String" resultClass="USER">
+   select * from user_table where username=#user#;
+  </select>
+  <update id="updateUser">
+  	update user_table set 
+  	password = #password#,
+  	niceName = #niceName#
+  	where id = #id#
+  </update>
+  <update id="updateLastLoginTime">
+  	 update user_table set 
+  	 lastLoginTime = #lastLoginTime#
+  	 where
+  	 id = #id# 
+  </update>
+<!--   <select id="getResource" parameterClass="int" resultClass="com.soft.domain.Author">
+		SELECT aut.* FROM user_table ut LEFT JOIN user_role ur 
+		ON ut.id=ur.user_id LEFT JOIN role_table rt ON ur.role_id=rt.id 
+		LEFT JOIN role_author ra ON rt.id=ra.role_id LEFT JOIN author_table aut 
+		ON ra.author_id=aut.id WHERE ut.id=#userid#
+	</select> -->
+	<update id="edituser" parameterClass="USER">
+		update user_table 
+		<dynamic prepend="set">       
+		            <isNotNull prepend="," property="password">       
+		                  password = #password#       
+		            </isNotNull> 
+		            <isNotNull prepend="," property="email">       
+		                  email = #email#       
+		            </isNotNull> 
+		       </dynamic>
+		where username = #username#
+	</update>
+	<select id="getbyid" parameterClass="int" resultClass="USER">
+		select ut.*,cp.comname from user_table ut LEFT JOIN company cp ON ut.shixidw=cp.id WHERE ut.id=#id#
+	</select>
+</sqlMap>

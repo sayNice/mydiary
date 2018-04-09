@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="photo">
+  
+  <typeAlias alias="PHOTO" type="com.soft.domain.Photo"/>
+  
+  
+  <select id="getPhotos" parameterClass="com.soft.domain.Search" resultClass="PHOTO">
+  	select * from photo_table
+  		<dynamic prepend="WHERE">
+ 			<isNotNull prepend="AND" property="userId">
+ 				(userId = #userId#)
+ 			</isNotNull>
+ 			<isNotNull prepend="AND" property="title">
+ 				(title like '%' #title# '%')
+ 			</isNotNull>
+ 			and validFlag = "Y"
+ 			<![CDATA[ LIMIT #offset#,#limit#]]>
+ 		</dynamic>
+  	
+  </select>
+  
+  <select id = "getPhotoCount" parameterClass="Integer" resultClass="Integer">
+  	select count(0) from photo_table where userId = #userId# and validFlag = "Y"
+  </select>
+  
+  <select id="getPhotoInfo" parameterClass="Integer" resultClass="PHOTO">
+  	select * from photo_table where id = #id# and validFlag = "Y"
+  </select>
+  
+  <update id="updatePhotoInfo">
+  	update photo_table set
+  		photoTitle = #photoTitle#,
+  		photoInfo = #photoInfo#
+  	where
+  		id = #id#
+  </update>
+ <select id="getDiary" parameterClass="com.soft.domain.Search" resultClass="com.soft.domain.Diary">
+ 	select * from diary_table 
+ 		<dynamic prepend="WHERE">
+ 			<isNotNull prepend="AND" property="userId">
+ 				(userId = #userId#)
+ 			</isNotNull>
+ 			<isNotNull prepend="AND" property="title">
+ 				(title like '%' #title# '%')
+ 			</isNotNull>
+ 			<isNotNull prepend="AND" property="createDate1">
+ 				(creatDate >= #createDate1#)
+ 			</isNotNull>
+ 			<isNotNull prepend="AND" property="createDate2">
+ 				<![CDATA[ (creatDate <= #createDate2#)]]>
+ 			</isNotNull>
+ 			and validFlag = "Y"
+ 			order by creatDate desc
+ 			<![CDATA[ LIMIT #limit#,#offset#]]>
+ 			
+ 		</dynamic>
+ </select>
+ <select id="getCount" parameterClass="com.soft.domain.Search" resultClass="Integer">
+ 	select count(0) from diary_table 
+ 		<dynamic prepend="WHERE">
+ 			<isNotNull prepend="AND" property="userId">
+ 				(userId = #userId#)
+ 			</isNotNull>
+ 			<isNotNull prepend="AND" property="title">
+ 				(title like '%' #title# '%')
+ 			</isNotNull>
+ 			<isNotNull prepend="AND" property="createDate1">
+ 				(creatDate >= #createDate1#)
+ 			</isNotNull>
+ 			<isNotNull prepend="AND" property="createDate2">
+ 				<![CDATA[ (creatDate <= #createDate2#)]]>
+ 			</isNotNull>
+ 			and validFlag = "Y"
+ 		</dynamic>
+ </select>
+  <delete id="deldiary" parameterClass="Long">
+  	delete  from diary_table where rowId = #rowId#
+  </delete>
+  <update id="updateValid" parameterClass="Long">
+  	update diary_table set validFlag = 'N' where rowId = #rowId#
+  </update>
+  <insert id="insert">
+  	insert into photo_table(id,photoName,photoTitle,creatDate,userId) values
+  	(
+  	null,
+  	#photoName#,
+  	#photoTitle#,
+  	#creatDate#,
+  	#userId#
+  	)
+  </insert>
+  <update id="editDiary" >
+  	update diary_table set
+  	title=#title#,
+  	 content=#content#
+  	
+  	where rowId=#rowId#
+  </update>
+  <select id="getTempDiaryCount" parameterClass="Integer" resultClass="Integer">
+  	select count(*) from temp_diary_table where userId = #userId#
+  </select>
+<insert id="tempAdd">
+  	insert into temp_diary_table(rowId,title,content,creatDate,userId) values
+  	(
+  	null,
+  	#title#,
+  	#content#,
+  	#creatDate#,
+  	#userId#
+  	)
+  </insert>
+  <select id="getTempDiary" parameterClass="Integer" resultClass="com.soft.domain.Diary">
+  	select * from temp_diary_table where userId = #userId#
+  </select>
+  <insert id="addDiaryForTemp">
+  	insert into diary_table(rowId,title,content,creatDate,userId) values
+  	(
+  	null,
+  	#title#,
+  	#content#,
+  	#creatDate#,
+  	#userId#
+  	)
+  </insert>
+  <delete id="delTempDiary" parameterClass="Integer">
+  	delete from temp_diary_table where userId = #userId#
+  </delete>
+</sqlMap>

@@ -1,0 +1,44 @@
+10
+
+dir
+91
+http://code.taobao.org/svn/mydiaryitem/trunk/mydiary/src/com/soft/framework
+http://code.taobao.org/svn/mydiaryitem
+
+
+
+2016-12-26T09:22:55.274476Z
+81
+872430124
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2f905d26-6e00-4248-8bd5-2b717c9b7f62
+
+
+
+
+
+
+0
+
+constant
+dir
+
+interceptors
+dir
+
+quartz
+dir
+
